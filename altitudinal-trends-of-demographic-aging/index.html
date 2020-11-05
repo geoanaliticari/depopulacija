@@ -46,17 +46,42 @@
         </ul>
       </div>
     </nav>
-    <div class="container">
-      <div class="title"></div>
-      <div class="intro"></div>
-      <div class="guide"></div>
-      <div class="map"></div>
-      <div class="legend_1"></div>
-      <div class="intro_1"></div>
-      <div class="viewof-sort"></div>
-      <div class="chart"></div>
-      <p>Credit: <a href="https://observablehq.com/@geoanaliticari/altitudinal-trends-of-demographic-aging-in-serbia">Altitudinal Trends of Demographic Aging by Geoanalitičari</a></p>
-
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-3 border-right">
+          <h6>Follow the steps</h6>
+          <div>
+            Chose a municipality, then scroll down to explore data
+            <img class="img-thumbnail w-75 mx-auto d-block"
+              src="./images/Indicator_1a.jpg">
+          </div>
+          <div>
+            See hypsometric color scale and choose age category group
+            <img class="img-thumbnail w-75 mx-auto d-block"
+              src="./images/Indicator_1b.jpg">
+          </div>
+          <div>
+            Pick a point on the scatter plot to explore data for the settlement
+            <img class="img-thumbnail w-75 mx-auto d-block"
+              src="./images/Indicator_1c.jpg">    
+          </div>
+          <div>
+            See how and where altitude affects the spatial distribution of age groups
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="title"></div>
+          <div class="intro"></div>
+          <div class="guide"></div>
+          <div class="map"></div>
+          <div class="legend_1"></div>
+          <div class="intro_1"></div>
+          <div class="viewof-sort"></div>
+          <div class="chart"></div>
+          <p>Credit: <a href="https://observablehq.com/@geoanaliticari/altitudinal-trends-of-demographic-aging-in-serbia">Altitudinal Trends of Demographic Aging by Geoanalitičari</a></p>
+        </div>
+      </div>
+        
       <script type="module">
       import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
       import define from "https://api.observablehq.com/@geoanaliticari/altitudinal-trends-of-demographic-aging-in-serbia.js?v=3";
