@@ -46,33 +46,29 @@
         </ul>
       </div>
     </nav>
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
-        <div class="col-3 border-right">
-          <h6>Follow the steps</h6>
-          <div>
-            Chose a municipality, then scroll down to explore data
-            <img class="img-thumbnail w-75 mx-auto d-block"
-              src="./images/Indicator_1a.jpg">
-          </div>
-          <div>
-            See hypsometric color scale and choose age category group
-            <img class="img-thumbnail w-75 mx-auto d-block"
-              src="./images/Indicator_1b.jpg">
-          </div>
-          <div>
-            Pick a point on the scatter plot to explore data for the settlement
-            <img class="img-thumbnail w-75 mx-auto d-block"
-              src="./images/Indicator_1c.jpg">    
-          </div>
-          <div>
-            See how and where altitude affects the spatial distribution of age groups
-          </div>
-        </div>
-        <div class="col-9">
+        <div class="col">
           <div class="title"></div>
           <div class="intro"></div>
-          <div class="guide"></div>
+          <strong>See how and where altitude affects the spatial distribution of age groups through the following steps:</strong>
+          <div class="row">
+            <div class="col-sm-4 my-2 py-3 bg-light text-center">
+              <img class="img-thumbnail w-25 mx-auto d-block"
+              src="./images/g2825.png">
+              <small>1. Chose a municipality and scroll down</small>
+            </div>
+            <div class="col-sm-4 my-2 py-3 bg-light text-center">
+              <img class="img-thumbnail w-25 mx-auto d-block"
+              src="./images/g2961.png">
+              <small>2. Choose age category group</small>
+            </div>
+            <div class="col-sm-4 my-2 py-3 bg-light text-center">
+              <img class="img-thumbnail w-25 mx-auto d-block"
+              src="./images/g3030.png">    
+              <small>3. Pick a point on the scatter plot and see more details</small>
+            </div>
+          </div>
           <div class="map"></div>
           <div class="legend_1"></div>
           <div class="intro_1"></div>
@@ -88,7 +84,6 @@
       (new Runtime).module(define, name => {
         if (name === "title") return Inspector.into(".title")();
         if (name === "intro") return Inspector.into(".intro")();
-        if (name === "guide") return Inspector.into(".guide")();
         if (name === "map") return Inspector.into(".map")();
         if (name === "legend_1") return Inspector.into(".legend_1")();
         if (name === "intro_1") return Inspector.into(".intro_1")();
@@ -98,4 +93,4 @@
       </script>
     </div>
   </body>
-</html>
+  </html>
