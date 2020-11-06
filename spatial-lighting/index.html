@@ -45,7 +45,28 @@
     <div class="container">
       <div class="title"></div>
       <div class="intro"></div>
-      <div class="guide"></div>
+      <div class="guide">
+        <p>
+          <strong>Compare the settlements according to the road network properties and population dynamic through the following steps:</strong>
+        </p>
+        <div class="row">
+          <div class="col-sm-4 mb-2 py-3 bg-light text-center">
+            <img class="img-thumbnail mx-auto d-block"
+              src="../images/g2961.png">    
+            <small>1. Choose a parameter</small>
+          </div>
+          <div class="col-sm-4 mb-2 py-3 bg-light text-center">
+            <img class="img-thumbnail mx-auto d-block"
+              src="../images/g2825.png">
+            <small>2. Chose a municipality and scroll down</small>
+          </div>
+          <div class="col-sm-4 mb-2 py-3 bg-light text-center">
+            <img class="img-thumbnail mx-auto d-block"
+              src="../images/g3096.png">
+            <small>3. Explore bar chart</small>
+          </div>
+        </div>
+      </div>
       <div class="viewof-sort"></div>
       <div class="subtitle"></div>
       <div class="map"></div>
@@ -59,7 +80,6 @@
       (new Runtime).module(define, name => {
         if (name === "title") return Inspector.into(".title")();
         if (name === "intro") return Inspector.into(".intro")();
-        if (name === "guide") return Inspector.into(".guide")();
         if (name === "viewof sort") return Inspector.into(".viewof-sort")();
         if (name === "subtitle") return Inspector.into(".subtitle")();
         if (name === "map") return Inspector.into(".map")();

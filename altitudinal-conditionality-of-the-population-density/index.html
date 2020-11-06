@@ -45,7 +45,28 @@
     <div class="container">
       <div class="title"></div>
       <div class="intro"></div>
-      <div class="guide"></div>
+      <div class="guide">
+        <p>
+          <strong>Analyse population concentration according to the altitude zones through the following steps:</strong>
+        </p>
+        <div class="row">
+          <div class="col-sm-4 mb-2 py-3 bg-light text-center">
+            <img class="img-thumbnail mx-auto d-block"
+              src="../images/g2825.png">
+            <small>1. Chose a municipality and scroll down</small>
+          </div>
+          <div class="col-sm-4 mb-2 py-3 bg-light text-center">
+            <img class="img-thumbnail mx-auto d-block"
+              src="../images/g2961.png">
+            <small>2. Choose age category group</small>
+          </div>
+          <div class="col-sm-4 mb-2 py-3 bg-light text-center">
+            <img class="img-thumbnail mx-auto d-block"
+              src="../images/g3187.png">    
+            <small>3. Hover over the bar to see more details</small>
+          </div>
+        </div>
+      </div>
       <div class="map"></div>
       <div class="viewof-sort"></div>
       <div class="legend_1"></div>
@@ -58,7 +79,6 @@
       (new Runtime).module(define, name => {
         if (name === "title") return Inspector.into(".title")();
         if (name === "intro") return Inspector.into(".intro")();
-        if (name === "guide") return Inspector.into(".guide")();
         if (name === "map") return Inspector.into(".map")();
         if (name === "viewof sort") return Inspector.into(".viewof-sort")();
         if (name === "legend_1") return Inspector.into(".legend_1")();

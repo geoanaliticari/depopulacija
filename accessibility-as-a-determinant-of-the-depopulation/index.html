@@ -45,7 +45,23 @@
     <div class="container">
       <div class="title"></div>
       <div class="intro"></div>
-      <div class="guide"></div>
+      <div class="guide">
+        <p>
+          <strong>Analyse accessibility of settlements depending on the average travel time to the municipal centre and population dynamic through the following steps:</strong>
+        </p>
+        <div class="row">
+          <div class="col-sm-6 mb-2 py-3 bg-light text-center">
+            <img class="img-thumbnail mx-auto d-block"
+              src="../images/g2825.png">
+            <small>1. Chose a municipality and scroll down</small>
+          </div>
+          <div class="col-sm-6 mb-2 py-3 bg-light text-center">
+            <img class="img-thumbnail mx-auto d-block"
+              src="../images/g3096.png">
+            <small>2. Explore bar chart</small>
+          </div>
+        </div>
+      </div>
       <div class="map"></div>
       <div class="legend"></div>
       <div class="chart"></div>
@@ -57,7 +73,6 @@
       (new Runtime).module(define, name => {
         if (name === "title") return Inspector.into(".title")();
         if (name === "intro") return Inspector.into(".intro")();
-        if (name === "guide") return Inspector.into(".guide")();
         if (name === "map") return Inspector.into(".map")();
         if (name === "legend") return Inspector.into(".legend")();
         if (name === "chart") return Inspector.into(".chart")();

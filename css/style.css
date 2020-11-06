@@ -26,3 +26,6 @@ circle.active {
 .observablehq {
   margin: 1em 0;
 }
+.guide img {
+  max-width: 64px;
+}
