@@ -24,8 +24,6 @@
       import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
       import define from "https://api.observablehq.com/@geoanaliticari/altitudinal-conditionality-of-the-population-density-cha.js?v=3";
       (new Runtime).module(define, name => {
-        if (name === "title") return Inspector.into(".title")();
-        if (name === "intro") return Inspector.into(".intro")();
         if (name === "map") return Inspector.into(".map")();
         if (name === "viewof sort") return Inspector.into(".viewof-sort")();
         if (name === "legend_1") return Inspector.into(".legend_1")();

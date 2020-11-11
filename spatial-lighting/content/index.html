@@ -21,14 +21,11 @@
       <div class="map"></div>
       <div class="legend_1"></div>
       <div class="chart"></div>
-      <p>Credit: <a href="https://observablehq.com/@geoanaliticari/spatial-lighting">Spatial Lighting by Geoanalitičari</a></p>
 
       <script type="module">
       import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
       import define from "https://api.observablehq.com/@geoanaliticari/spatial-lighting.js?v=3";
       (new Runtime).module(define, name => {
-        if (name === "title") return Inspector.into(".title")();
-        if (name === "intro") return Inspector.into(".intro")();
         if (name === "viewof sort") return Inspector.into(".viewof-sort")();
         if (name === "subtitle") return Inspector.into(".subtitle")();
         if (name === "map") return Inspector.into(".map")();

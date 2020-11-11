@@ -24,8 +24,6 @@
       import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
       import define from "https://api.observablehq.com/@geoanaliticari/accessibility-as-a-determinant-of-the-depopulation-in-serb.js?v=3";
       (new Runtime).module(define, name => {
-        if (name === "title") return Inspector.into(".title")();
-        if (name === "intro") return Inspector.into(".intro")();
         if (name === "map") return Inspector.into(".map")();
         if (name === "legend") return Inspector.into(".legend")();
         if (name === "chart") return Inspector.into(".chart")();
