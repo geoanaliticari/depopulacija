@@ -95,7 +95,7 @@
     crossorigin="anonymous"></script>
 
   <div id="map"></div>
-  
+
   <script>
     $(document).ready(function () {
       var layers = {
@@ -208,27 +208,25 @@
       };
       legend.addTo(map);
 
-      if (L.Browser.mobile) {
-        var legendButton = L.control({ position: 'topleft' });
-        legendButton.onAdd = function (map) {
-          var div = L.DomUtil.create('div', 'info legend');
-          div.innerHTML = '<i class="fas fa-list"></i>';
-          div.id = 'legendButton';
-          return div;
-        };
-        legendButton.addTo(map);
+      var legendButton = L.control({ position: 'topleft' });
+      legendButton.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'info legend');
+        div.innerHTML = '<i class="fas fa-list"></i>';
+        div.id = 'legendButton';
+        return div;
+      };
+      legendButton.addTo(map);
 
-        $('#legend').hide();
+      $('#legend').hide();
+      $('#legendButton').show();
+      $('#legendButton').on("mouseenter mouseover", function () {
+        $('#legend').show();
+        $('#legendButton').hide();
+      })
+      $('#legend').on("mouseleave mouseout click", function () {
         $('#legendButton').show();
-        $('#legendButton').on("mouseenter mouseover", function () {
-          $('#legend').show();
-          $('#legendButton').hide();
-        })
-        $('#legend').on("mouseleave mouseout click", function () {
-          $('#legendButton').show();
-          $('#legend').hide();
-        })
-      }
+        $('#legend').hide();
+      })
 
       $('#legend-icon-div').hover(
         function () {
