@@ -21,7 +21,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"></script>
-    
+
   <div class="map"></div>
   <div class="viewof-sort"></div>
   <div class="legend_1"></div>
@@ -29,7 +29,7 @@
 
   <script type="module">
     import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-    import define from "https://api.observablehq.com/@geoanaliticari/altitudinal-conditionality-of-the-population-density-cha.js?v=3";
+    import define from "https://api.observablehq.com/@geoanaliticari/altitudinal-conditionality-of-the-population-density-cha.js?v=3&lang=sr";
     (new Runtime).module(define, name => {
       if (name === "map") return Inspector.into(".map")();
       if (name === "viewof sort") return Inspector.into(".viewof-sort")();
