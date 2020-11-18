@@ -24,6 +24,7 @@
 
   <div class="map"></div>
   <div class="viewof-sort"></div>
+  <div class="intro_1"></div>
   <div class="legend_1"></div>
   <div class="chart"></div>
 
@@ -33,6 +34,7 @@
     (new Runtime).module(define, name => {
       if (name === "map") return Inspector.into(".map")();
       if (name === "viewof sort") return Inspector.into(".viewof-sort")();
+      if (name === "intro_1") return Inspector.into(".intro_1")();
       if (name === "legend_1") return Inspector.into(".legend_1")();
       if (name === "chart") return Inspector.into(".chart")();
       return ["series", "data", "x", "naselja", "color", "format", "y", "height", "xAxis", "domain", "yAxis", "colorMap"].includes(name) || null;
