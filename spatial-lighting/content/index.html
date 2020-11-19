@@ -25,6 +25,7 @@
   <div class="viewof-sort"></div>
   <div class="subtitle"></div>
   <div class="map"></div>
+  <div class="intro_1"></div>
   <div class="legend_1"></div>
   <div class="chart"></div>
 
@@ -35,6 +36,7 @@
       if (name === "viewof sort") return Inspector.into(".viewof-sort")();
       if (name === "subtitle") return Inspector.into(".subtitle")();
       if (name === "map") return Inspector.into(".map")();
+      if (name === "intro_1") return Inspector.into(".intro_1")();
       if (name === "legend_1") return Inspector.into(".legend_1")();
       if (name === "chart") return Inspector.into(".chart")();
       return ["data", "x", "color", "domain", "format", "y", "yAxis", "height", "xAxis"].includes(name) || null;

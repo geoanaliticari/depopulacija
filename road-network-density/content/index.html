@@ -23,6 +23,7 @@
     crossorigin="anonymous"></script>
 
   <div class="map"></div>
+  <div class="intro_1"></div>
   <div class="legend_1"></div>
   <div class="chart_0"></div>
   <div class="viewof-sort"></div>
@@ -34,6 +35,7 @@
     import define from "https://api.observablehq.com/@geoanaliticari/road-network-density-in-serbia.js?v=3";
     (new Runtime).module(define, name => {
       if (name === "map") return Inspector.into(".map")();
+      if (name === "intro_1") return Inspector.into(".intro_1")();
       if (name === "legend_1") return Inspector.into(".legend_1")();
       if (name === "chart_0") return Inspector.into(".chart_0")();
       if (name === "viewof sort") return Inspector.into(".viewof-sort")();

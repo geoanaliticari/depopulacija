@@ -24,6 +24,7 @@
 
   <div class="map"></div>
   <div class="legend"></div>
+  <div class="intro_1"></div>
   <div class="chart"></div>
 
   <script type="module">
@@ -32,6 +33,7 @@
     (new Runtime).module(define, name => {
       if (name === "map") return Inspector.into(".map")();
       if (name === "legend") return Inspector.into(".legend")();
+      if (name === "intro_1") return Inspector.into(".intro_1")();
       if (name === "chart") return Inspector.into(".chart")();
     });
   </script>
