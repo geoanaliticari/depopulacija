@@ -219,11 +219,11 @@
 
       $('#legend').hide();
       $('#legendButton').show();
-      $('#legendButton').on("mouseenter mouseover", function () {
+      $('#legendButton').on("click", function () {
         $('#legend').show();
         $('#legendButton').hide();
       })
-      $('#legend').on("mouseleave mouseout click", function () {
+      $('#legend').on("click", function () {
         $('#legendButton').show();
         $('#legend').hide();
       })
