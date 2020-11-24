@@ -102,16 +102,19 @@
         "2": {
           "name": "Population Change Index in Serbia, 1975/2015",
           "legend": "Population Change Index (PCI), 2015/1975 [%]",
+          "legendKey": "2_population_change",
           "key": "2_population_change"
         },
         "3": {
           "name": "Population Density in Serbia, 2015",
           "legend": "Population Density (PD), 2015 [inh./km<sup>2</sup>]",
+          "legendKey": "3_population_density",
           "key": "3_population_density"
         },
         "4": {
           "name": "Lot Coverage Change Index in Serbia, 2014/1975",
           "legend": "Lot Coverage Change Index (LCCI), 2014/1975 [%]",
+          "legendKey": "4_lot_coverage_change",
           "key": "4_lot_coverage_change"
         }
       };
@@ -127,17 +130,20 @@
           "2": {
             "name": "Indeks promene broja stanovnika u Srbiji, 2015/2075",
             "legend": "Indeks promene broja stanovnika, 2015/2075 [%]",
-            "key": "2_population_change_sr"
+            "legendKey": "2_population_change_sr",
+            "key": "2_population_change"
           },
           "3": {
             "name": "Gustina naseljenosti u Srbiji, 2015",
             "legend": "Gustina naseljenosti, 2015 [inh./km<sup>2</sup>]",
-            "key": "3_population_density_sr"
+            "legendKey": "3_population_density_sr",
+            "key": "3_population_density"
           },
           "4": {
             "name": "Indeks promene izgrađenosti u Srbiji, 2014/1975",
             "legend": "Indeks promene izgrađenosti, 2014/1975 [%]",
-            "key": "4_lot_coverage_change_sr"
+            "legendKey": "4_lot_coverage_change_sr",
+            "key": "4_lot_coverage_change"
           }
         };
         adm_boundaries = "Administrativne granice";
@@ -227,7 +233,7 @@
       var legend = L.control({ position: 'topleft' });
       legend.onAdd = function (map) {
         var div = L.DomUtil.create('div', 'info legend');
-        div.innerHTML = `<h1>${layer.legend}</h1><img src="/map/legend/${layer.key}.png" />`;
+        div.innerHTML = `<h1>${layer.legend}</h1><img src="/map/legend/${layer.legendKey}.png" />`;
         div.id = 'legend';
         return div;
       };
