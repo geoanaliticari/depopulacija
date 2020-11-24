@@ -196,7 +196,7 @@
       overlays[settlements] = new L.geoJson(settlement_boundaries, { style: style_settlement_boundaries });
 
       L.control.layers(null, overlays, { collapsed: false }).addTo(map);
-      state.addTo(map);
+      overlays[state].addTo(map);
 
       $(`<h5>${adm_boundaries}</h5>`).insertBefore('div.leaflet-control-layers-base');
 
