@@ -98,6 +98,8 @@
 
   <script>
     $(document).ready(function () {
+      // LAYERS
+      var state, municipalities, settlements;
       var layers = {
         "2": {
           "name": "Population change index in Serbia 1975–2015",
@@ -120,6 +122,25 @@
       if (params.has('l')) {
         layer = layers[params.get('l')];
         document.title = layer.name;
+      }
+
+      var adm_boundaries = "Administrative boundaries";
+      var transp = "Map layer opacity";
+      // LAYER CONTROL	
+      var overlays = {
+        "State": state,
+        "Municipalities": municipalities,
+        "Settlements": settlements
+      };
+      
+      if (params.has('sr')) {
+        adm_boundaries = "Administrativne granice";
+        transp = "Transparentnost";
+        overlays = {
+          "Država": state,
+          "Opštine": municipalities,
+          "Naselja": settlements
+        };
       }
 
       var map = L.map('map', {
@@ -176,20 +197,14 @@
       }
 
       // LAYER FUNCTIONALITY
-      var state = new L.geoJson(state_boundary, { style: style_state_boundary });
-      var municipalities = new L.geoJson(municipality_boundaries, { style: style_municipality_boundaries });
-      var settlements = new L.geoJson(settlement_boundaries, { style: style_settlement_boundaries });
+      state = new L.geoJson(state_boundary, { style: style_state_boundary });
+      municipalities = new L.geoJson(municipality_boundaries, { style: style_municipality_boundaries });
+      settlements = new L.geoJson(settlement_boundaries, { style: style_settlement_boundaries });
 
-      // LAYER CONTROL	
-      var overlays = {
-        "State": state,
-        "Municipality": municipalities,
-        "Settlement": settlements
-      };
       L.control.layers(null, overlays, { collapsed: false }).addTo(map);
       state.addTo(map);
 
-      $('<h5>Administrative boundaries</h5>').insertBefore('div.leaflet-control-layers-base');
+      $(`<h5>${adm_boundaries}</h5>`).insertBefore('div.leaflet-control-layers-base');
 
       // TILES
       var mytile = L.tileLayer(`/map/tiles/${layer.key}/{z}/{x}/{y}.png`, {
@@ -240,7 +255,7 @@
       var opacity = L.control({ position: 'topright' });
       opacity.onAdd = function (map) {
         var div = L.DomUtil.create('div', 'slider info');
-        div.innerHTML = '<h5>Map layer opacity</h5><label><div id="basemapslider"></div></label>';
+        div.innerHTML = `<h5>${transp}</h5><label><div id="basemapslider"></div></label>`;
         return div;
       };
       opacity.addTo(map);
