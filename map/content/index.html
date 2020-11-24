@@ -98,8 +98,6 @@
 
   <script>
     $(document).ready(function () {
-      // LAYERS
-      var state, municipalities, settlements;
       var layers = {
         "2": {
           "name": "Population change index in Serbia 1975–2015",
@@ -126,21 +124,16 @@
 
       var adm_boundaries = "Administrative boundaries";
       var transp = "Map layer opacity";
-      // LAYER CONTROL	
-      var overlays = {
-        "State": state,
-        "Municipalities": municipalities,
-        "Settlements": settlements
-      };
+      var state = "State";
+      var municipalities = "Municipalities";
+      var settlements = "Settlements";
       
       if (params.has('sr')) {
         adm_boundaries = "Administrativne granice";
         transp = "Transparentnost";
-        overlays = {
-          "Država": state,
-          "Opštine": municipalities,
-          "Naselja": settlements
-        };
+        state = "Država";
+        municipalities = "Opštine";
+        settlements = "Naselja";
       }
 
       var map = L.map('map', {
@@ -197,9 +190,10 @@
       }
 
       // LAYER FUNCTIONALITY
-      state = new L.geoJson(state_boundary, { style: style_state_boundary });
-      municipalities = new L.geoJson(municipality_boundaries, { style: style_municipality_boundaries });
-      settlements = new L.geoJson(settlement_boundaries, { style: style_settlement_boundaries });
+      var overlays;
+      overlays[state] = new L.geoJson(state_boundary, { style: style_state_boundary });
+      overlays[municipalities] = new L.geoJson(municipality_boundaries, { style: style_municipality_boundaries });
+      overlays[settlements] = new L.geoJson(settlement_boundaries, { style: style_settlement_boundaries });
 
       L.control.layers(null, overlays, { collapsed: false }).addTo(map);
       state.addTo(map);
