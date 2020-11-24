@@ -100,40 +100,56 @@
     $(document).ready(function () {
       var layers = {
         "2": {
-          "name": "Population change index in Serbia 1975–2015",
-          "legend": "Population change index (PCI) in Serbia 1975–2015 [%]",
+          "name": "Population Change Index in Serbia, 1975/2015",
+          "legend": "Population Change Index (PCI), 2015/1975 [%]",
           "key": "2_population_change"
         },
         "3": {
-          "name": "Population density in Serbia 2015",
-          "legend": "Population density (PD) in Serbia 2015 [inh./km<sup>2</sup>]",
+          "name": "Population Density in Serbia, 2015",
+          "legend": "Population Density (PD), 2015 [inh./km<sup>2</sup>]",
           "key": "3_population_density"
         },
         "4": {
-          "name": "Lot coverage change index in Serbia 1975—2014",
-          "legend": "Lot coverage change index (LCCI) in Serbia 1975—2014 [%]",
+          "name": "Lot Coverage Change Index in Serbia, 2014/1975",
+          "legend": "Lot Coverage Change Index (LCCI), 2014/1975 [%]",
           "key": "4_lot_coverage_change"
         }
-      }
-
-      let params = new URLSearchParams(window.location.search);
-      if (params.has('l')) {
-        layer = layers[params.get('l')];
-        document.title = layer.name;
-      }
-
+      };
       var adm_boundaries = "Administrative boundaries";
       var transp = "Map layer opacity";
       var state = "State";
       var municipalities = "Municipalities";
       var settlements = "Settlements";
-      
+
+      let params = new URLSearchParams(window.location.search);
       if (params.has('sr')) {
+        layers = {
+          "2": {
+            "name": "Indeks promene broja stanovnika u Srbiji, 2015/2075",
+            "legend": "Indeks promene broja stanovnika, 2015/2075 [%]",
+            "key": "2_population_change_sr"
+          },
+          "3": {
+            "name": "Gustina naseljenosti u Srbiji, 2015",
+            "legend": "Gustina naseljenosti, 2015 [inh./km<sup>2</sup>]",
+            "key": "3_population_density_sr"
+          },
+          "4": {
+            "name": "Indeks promene izgrađenosti u Srbiji, 2014/1975",
+            "legend": "Indeks promene izgrađenosti, 2014/1975 [%]",
+            "key": "4_lot_coverage_change_sr"
+          }
+        };
         adm_boundaries = "Administrativne granice";
         transp = "Transparentnost";
         state = "Država";
         municipalities = "Opštine";
         settlements = "Naselja";
+      }
+
+      if (params.has('l')) {
+        layer = layers[params.get('l')];
+        document.title = layer.name;
       }
 
       var map = L.map('map', {
