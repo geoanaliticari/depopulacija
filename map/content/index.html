@@ -190,7 +190,7 @@
       }
 
       // LAYER FUNCTIONALITY
-      var overlays;
+      var overlays = {};
       overlays[state] = new L.geoJson(state_boundary, { style: style_state_boundary });
       overlays[municipalities] = new L.geoJson(municipality_boundaries, { style: style_municipality_boundaries });
       overlays[settlements] = new L.geoJson(settlement_boundaries, { style: style_settlement_boundaries });
