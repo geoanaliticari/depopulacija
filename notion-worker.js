@@ -20,7 +20,24 @@
   const GOOGLE_FONT = '';
 
   /* Step 5: enter any custom scripts you'd like */
-  const CUSTOM_SCRIPT = ``;
+  const CUSTOM_SCRIPT = `<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8E6RP8RVL3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8E6RP8RVL3');
+</script>
+<script>const nipeF = new MutationObserver(function() {
+  var el = document.querySelector(".notion-topbar > div > div > div > div");
+  if (el) { el.style["maxWidth"] = "400px"; }
+});
+nipeF.observe(document.querySelector('#notion-app'), {
+  childList: true,
+  subtree: true,
+});
+</script>`;
 
   /* CONFIGURATION ENDS HERE */
 
